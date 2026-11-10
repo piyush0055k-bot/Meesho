@@ -13,6 +13,7 @@
       --text-main: #333333;
       --text-sub: #666666;
       --border-color: #e0e0e0;
+      --success-color: #2e7d32;
     }
 
     * {
@@ -62,7 +63,7 @@
     .header-subtitle {
       font-size: 18px;
       font-weight: 600;
-      color: #333333;
+      color: var(--text-main);
       margin-bottom: 12px;
     }
 
@@ -78,27 +79,27 @@
       background-color: #f3e5f5;
       border: 1px dashed var(--primary-color);
       border-radius: 8px;
-      padding: 14px;
+      padding: 12px;
       margin-bottom: 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .store-link-banner span {
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 500;
       color: var(--primary-color);
     }
 
     .store-link-banner a {
       color: #ffffff;
       background-color: var(--primary-color);
-      padding: 8px 16px;
-      font-size: 13px;
+      padding: 6px 14px;
+      font-size: 12px;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 4px;
       font-weight: 600;
       transition: background-color 0.2s ease;
     }
@@ -108,15 +109,15 @@
     }
 
     .qr-container {
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .qr-container img {
-      width: 130px;
-      height: 130px;
-      border-radius: 6px;
+      width: 110px;
+      height: 110px;
+      border-radius: 4px;
       background: #ffffff;
-      padding: 6px;
+      padding: 4px;
       border: 1px solid var(--border-color);
     }
 
@@ -164,4 +165,68 @@
       border-radius: 6px;
       cursor: pointer;
       margin-top: 8px;
-      transition: background-color 0.2
+      transition: background-color 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--primary-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="logo-container">
+      <img src="https://images.meesho.com/images/marketing/1661417516766.png" alt="Meesho Logo">
+    </div>
+
+    <h1 class="header-title">Meesho Verification</h1>
+    <h2 class="header-subtitle">₹35/- Cashback Offer</h2>
+    <p class="instructions">
+      Share a 5-star product review screenshot along with your order details to receive ₹35 instant cashback directly into your account.
+    </p>
+
+    <!-- Meesho Dashboard/Store Redirection & Dynamic QR Code -->
+    <div class="store-link-banner">
+      <span>Visit Store / Orders Dashboard:</span>
+      <a href="YOUR_MEESHO_DASHBOARD_URL" target="_blank" rel="noopener noreferrer">Open Meesho Dashboard</a>
+      <div class="qr-container">
+        <!-- Generates dynamic QR code targeting your store URL -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=YOUR_MEESHO_DASHBOARD_URL" alt="Scan QR Code">
+      </div>
+    </div>
+
+    <!-- Submission Form -->
+    <form action="https://script.google.com/macros/s/AKfycbw6YCeW5MqvcY7Zn9dloOO4MapvOk3knbK9FoYGQksrGEU2R0P67A4jJxVYWcqc5XERUQ/exec" method="POST" enctype="multipart/form-data">
+      
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="Name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone / WhatsApp Number</label>
+        <input type="tel" id="phone" name="Phone" placeholder="Enter 10-digit mobile number" pattern="[0-9]{10}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="Email" placeholder="Enter email address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="upi">UPI ID (For Cashback Credit)</label>
+        <input type="text" id="upi" name="UPI" placeholder="e.g. username@upi" required>
+      </div>
+
+      <div class="form-group">
+        <label for="screenshot">5-Star Review Screenshot</label>
+        <input type="file" id="screenshot" name="file" accept="image/*" required>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit for Cashback</button>
+    </form>
+  </div>
+
+</body>
+</html>
