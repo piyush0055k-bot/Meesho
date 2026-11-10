@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meesho Cashback Offer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        .header {
+            text-align: center;
+            color: #f3274c;
+            margin-bottom: 10px;
+        }
+        .instructions {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 25px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #f3274c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d6193d;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="header">Meesho</h1>
+        <h2 style="text-align: center; color: #333;">₹50 Cashback Offer</h2>
+        <p class="instructions">Share a 5-star product review, upload the screenshot along with your order details below, and get ₹50 cashback directly to your UPI!</p>
+        <form>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter mobile number" required>
+            </div>
+            <div class="form-group">
+                <label>Email ID</label>
+                <input type="email" placeholder="Enter email address" required>
+            </div>
+            <div class="form-group">
+                <label>Order ID</label>
+                <input type="text" placeholder="Enter Meesho Order ID" required>
+            </div>
+            <div class="form-group">
+                <label>5-Star Review Screenshot</label>
+                <input type="file" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label>UPI ID or QR Code Upload</label>
+                <input type="file" accept="image/*" required>
+            </div>
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</body>
+</html>
