@@ -1,104 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meesho Cashback Offer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-        .form-container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 100%;
-        }
-        .header {
-            text-align: center;
-            color: #f3274c;
-            margin-bottom: 10px;
-        }
-        .instructions {
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 25px;
-            text-align: center;
-            line-height: 1.5;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-        input[type="text"],
-        input[type="tel"],
-        input[type="email"],
-        input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #f3274c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #d6193d;
-        }
-    </style>
-</head>
-<body>
-    <div class="form-container">
-        <h1 class="header">Meesho</h1>
-        <h2 style="text-align: center; color: #333;">₹50 Cashback Offer</h2>
-        <p class="instructions">Share a 5-star product review, upload the screenshot along with your order details below, and get ₹50 cashback directly to your UPI!</p>
-        <form action="https://script.google.com/macros/s/AKfycbw6YCeW5MqvcY7Zn9dloOO4MapvOk3knbK9FoYGQksrGEU2R0P67A4jJxVYWcqc5XERUQ/exec" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" placeholder="Enter mobile number" required>
-            </div>
-            <div class="form-group">
-                <label>Email ID</label>
-                <input type="email" placeholder="Enter email address" required>
-            </div>
-            <div class="form-group">
-                <label>Order ID</label>
-                <input type="text" placeholder="Enter Meesho Order ID" required>
-            </div>
-            <div class="form-group">
-                <label>5-Star Review Screenshot</label>
-                <input type="file" accept="image/*" required>
-            </div>
-            <div class="form-group">
-                <label>UPI ID or QR Code Upload</label>
-                <input type="file" accept="image/*" required>
-            </div>
-            <button type="submit">Submit Request</button>
-        </form>
-    </div>
-</body>
-</html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meesho ₹35 Cashback Offer</title>
+  <style>
+    :root {
+      --primary-color: #9c27b0;
+      --primary-hover: #7b1fa2;
+      --bg-color: #f7f8fa;
+      --card-bg: #ffffff;
+      --text-main: #333333;
+      --text-sub: #666666;
+      --border-color: #e0e0e0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      max-width: 480px;
+      width: 100%;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .logo-container {
+      margin-bottom: 16px;
+    }
+
+    .logo-container img {
+      max-width: 140px;
+      height: auto;
+      display: inline-block;
+    }
+
+    .header-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 6px;
+    }
+
+    .header-subtitle {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 12px;
+    }
+
+    .instructions {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.5;
+      margin-bottom: 24px;
+      padding: 0 8px;
+    }
+
+    .store-link-banner {
+      background-color: #f3e5f5;
+      border: 1px dashed var(--primary-color);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .store-link-banner span {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .store-link-banner a {
+      color: #ffffff;
+      background-color: var(--primary-color);
+      padding: 8px 16px;
+      font-size: 13px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+
+    .store-link-banner a:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .qr-container {
+      margin-top: 6px;
+    }
+
+    .qr-container img {
+      width: 130px;
+      height: 130px;
+      border-radius: 6px;
+      background: #ffffff;
+      padding: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus {
+      border-color: var(--primary-color);
+    }
+
+    .form-group input[type="file"] {
+      padding: 8px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background-color 0.2
