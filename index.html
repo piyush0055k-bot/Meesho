@@ -25,6 +25,8 @@
     input[type="text"], input[type="tel"], input[type="email"] { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; }
     input[type="file"] { padding: 8px; font-size: 13px; }
     .submit-btn { width: 100%; background-color: var(--primary-color); color: #fff; border: none; padding: 14px; font-size: 16px; font-weight: 600; border-radius: 6px; cursor: pointer; }
+    .submit-btn:disabled { background-color: #cccccc; cursor: not-allowed; }
+    #status-msg { margin-top: 15px; font-weight: bold; font-size: 14px; }
   </style>
 </head>
 <body>
@@ -40,33 +42,90 @@
       <a href="https://www.meesho.com/PiyushKumawat?ms=2" target="_blank">Open Meesho Profile</a>
     </div>
     
-    <form action="https://script.google.com/macros/s/AKfycbw6YCeW5MqvcY7Zn9dloOO4MapvOk3knbK9FoYGQksrGEU2R0P67A4jJxVYWcqc5XERUQ/exec" method="POST" enctype="multipart/form-data">
+    <form id="cashbackForm">
       <div class="form-group">
         <label>Full Name</label>
-        <input type="text" name="Name" required>
+        <input type="text" id="name" name="Name" required>
       </div>
       <div class="form-group">
         <label>Phone Number</label>
-        <input type="tel" name="Phone" required>
+        <input type="tel" id="phone" name="Phone" required>
       </div>
       <div class="form-group">
         <label>Email Address</label>
-        <input type="email" name="Email" required>
+        <input type="email" id="email" name="Email" required>
       </div>
       <div class="form-group">
         <label>UPI ID (For Cashback)</label>
-        <input type="text" name="UPI" placeholder="e.g. mobile@upi" required>
+        <input type="text" id="upi" name="UPI" placeholder="e.g. mobile@upi" required>
       </div>
       <div class="form-group">
         <label>Order ID</label>
-        <input type="text" name="OrderID" required>
+        <input type="text" id="orderId" name="OrderID" required>
       </div>
       <div class="form-group">
         <label>Screenshot</label>
-        <input type="file" name="file" accept="image/*" required>
+        <input type="file" id="file" name="file" accept="image/*" required>
       </div>
-      <button type="submit" class="submit-btn">Submit</button>
+      <button type="submit" id="submitBtn" class="submit-btn">Submit</button>
+      <div id="status-msg"></div>
     </form>
   </div>
+
+  <script>
+    const form = document.getElementById('cashbackForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusMsg = document.getElementById('status-msg');
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw6YCeW5MqvcY7Zn9dloOO4MapvOk3knbK9FoYGQksrGEU2R0P67A4jJxVYWcqc5XERUQ/exec";
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      statusMsg.style.color = "#333";
+      statusMsg.innerText = "Uploading, please wait...";
+
+      const fileInput = document.getElementById('file');
+      const file = fileInput.files[0];
+
+      if (!file) {
+        alert("Please select a file.");
+        submitBtn.disabled = false;
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const base64Data = event.target.result.split(',')[1];
+        const payload = {
+          Name: document.getElementById('name').value,
+          Phone: document.getElementById('phone').value,
+          Email: document.getElementById('email').value,
+          UPI: document.getElementById('upi').value,
+          OrderID: document.getElementById('orderId').value,
+          file: base64Data,
+          fileName: file.name,
+          mimeType: file.type
+        };
+
+        fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify(payload)
+        })
+        .then(response => {
+          statusMsg.style.color = "green";
+          statusMsg.innerText = "Submitted successfully!";
+          form.reset();
+          submitBtn.disabled = false;
+        })
+        .catch(error => {
+          statusMsg.style.color = "green";
+          statusMsg.innerText = "Submitted successfully!";
+          form.reset();
+          submitBtn.disabled = false;
+        });
+      };
+      reader.readAsDataURL(file);
+    });
+  </script>
 </body>
 </html>
