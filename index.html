@@ -3,122 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meesho ₹50 Cashback Offer</title>
+  <title>Meesho Verification & Cashback</title>
   <style>
     :root {
       --primary-color: #9c27b0;
-      --bg-color: #f7f8fa;
+      --secondary-color: #d81b60;
+      --bg-color: #f4f6f9;
       --card-bg: #ffffff;
-      --text-main: #333333;
+      --text-main: #222222;
     }
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
-      font-family: sans-serif; 
-    }
-    body { 
-      background-color: var(--bg-color); 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      min-height: 100vh; 
-      padding: 20px; 
-    }
-    .form-container { 
-      background-color: var(--card-bg); 
-      border-radius: 12px; 
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
-      max-width: 480px; 
-      width: 100%; 
-      padding: 32px; 
-      text-align: center; 
-    }
-    .logo-container img { 
-      max-width: 220px; 
-      width: 100%;
-      margin-bottom: 18px; 
-    }
-    h1 { 
-      color: var(--primary-color); 
-      font-size: 32px; 
-      font-weight: 800;
-      margin-bottom: 8px; 
-    }
-    h2 { 
-      font-size: 20px; 
-      margin-bottom: 12px; 
-    }
-    p { 
-      font-size: 14px; 
-      color: #666; 
-      margin-bottom: 24px; 
-    }
-    .store-link { 
-      margin-bottom: 20px; 
-    }
-    .store-link a { 
-      display: inline-block; 
-      background-color: #f3e5f5; 
-      color: #9c27b0; 
-      padding: 10px 20px; 
-      text-decoration: none; 
-      border-radius: 6px; 
-      font-weight: bold; 
-    }
-    .form-group { 
-      text-align: left; 
-      margin-bottom: 18px; 
-    }
-    label { 
-      display: block; 
-      font-size: 13px; 
-      font-weight: 600; 
-      margin-bottom: 6px; 
-    }
-    input[type="text"], 
-    input[type="tel"], 
-    input[type="email"] { 
-      width: 100%; 
-      padding: 12px; 
-      border: 1px solid #ccc; 
-      border-radius: 6px; 
-      font-size: 14px; 
-    }
-    input[type="file"] { 
-      padding: 8px; 
-      font-size: 13px; 
-    }
-    .submit-btn { 
-      width: 100%; 
-      background-color: var(--primary-color); 
-      color: #fff; 
-      border: none; 
-      padding: 14px; 
-      font-size: 16px; 
-      font-weight: 600; 
-      border-radius: 6px; 
-      cursor: pointer; 
-    }
-    .submit-btn:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-    #statusMessage {
-      margin-top: 15px;
-      font-weight: bold;
-      font-size: 14px;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: var(--bg-color); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 15px; }
+    .form-container { background-color: var(--card-bg); border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); max-width: 500px; width: 100%; padding: 40px; text-align: center; border-top: 8px solid var(--primary-color); }
+    
+    .logo-container { margin-bottom: 20px; }
+    .logo-container img { max-width: 180px; height: auto; display: inline-block; }
+    .brand-title { font-size: 28px; font-weight: 800; color: var(--primary-color); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    h1 { color: var(--text-main); font-size: 32px; margin-bottom: 8px; font-weight: 700; }
+    .offer-badge { display: inline-block; background-color: #ffebee; color: var(--secondary-color); font-size: 20px; font-weight: bold; padding: 8px 24px; border-radius: 50px; margin-bottom: 20px; border: 2px dashed var(--secondary-color); }
+    
+    .instructions { background-color: #f8e1e7; padding: 20px; border-radius: 12px; margin-bottom: 24px; text-align: left; font-size: 15px; line-height: 1.6; color: #222; border: 1px solid #f06292; }
+    .instructions p { margin-bottom: 12px; font-weight: 500; }
+    .instructions p:last-child { margin-bottom: 0; }
+    .hindi-text { font-weight: 600 !important; color: #880e4f; font-size: 16px; border-top: 1px solid #fbb8cb; padding-top: 12px; }
+
+    .store-link { margin-bottom: 25px; }
+    .store-link a { display: block; background-color: #f3e5f5; color: #7b1fa2; padding: 14px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; transition: background 0.3s; border: 1px solid #e1bee7; }
+    .store-link a:hover { background-color: #e1bee7; }
+
+    .form-group { text-align: left; margin-bottom: 20px; }
+    label { display: block; font-size: 14px; font-weight: 600; color: #444; margin-bottom: 8px; }
+    input[type="text"], input[type="tel"], input[type="email"] { width: 100%; padding: 14px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s; }
+    input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus { border-color: var(--primary-color); }
+    
+    .file-upload-group { background: #fafafa; padding: 15px; border: 2px dashed #ccc; border-radius: 8px; margin-bottom: 25px; text-align: left; }
+    input[type="file"] { width: 100%; padding: 10px 0; font-size: 14px; cursor: pointer; }
+    
+    .submit-btn { width: 100%; background-color: var(--primary-color); color: #fff; border: none; padding: 16px; font-size: 18px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: transform 0.2s, background-color 0.3s; box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3); }
+    .submit-btn:hover { background-color: #7b1fa2; transform: translateY(-2px); }
+    .submit-btn:disabled { background-color: #ccc; cursor: not-allowed; box-shadow: none; }
+    
+    #statusMessage { margin-top: 20px; font-weight: bold; font-size: 16px; padding: 15px; border-radius: 8px; display: none; }
   </style>
 </head>
 <body>
   <div class="form-container">
     <div class="logo-container">
       <img src="https://images.meesho.com/images/marketing/1661417516766.png" alt="Meesho">
+      <div class="brand-title">Meesho</div>
     </div>
-    <h1>Meesho Verification</h1>
-    <h2>₹50/- Cashback Offer</h2>
-    <p>Share screenshot to receive cashback.</p>
+    
+    <h1>Verification</h1>
+    <div class="offer-badge">₹50/- Cashback Offer</div>
+    
+    <div class="instructions">
+      <p><strong>English:</strong> Please submit your details along with the payment screenshot. You will receive ₹50 cashback in your account within 7 working days.</p>
+      <p class="hindi-text"><strong>हिंदी:</strong> कृपया अपना विवरण और पेमेंट का स्क्रीनशॉट सबमिट करें। 7 कार्य दिवसों के भीतर आपके खाते में ₹50 का कैशबैक आ जाएगा。</p>
+    </div>
     
     <div class="store-link">
       <a href="https://www.meesho.com/PiyushKumawat?ms=2" target="_blank">Open Meesho Profile</a>
@@ -126,30 +68,32 @@
     
     <form id="cashbackForm">
       <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" id="Name" required>
+        <label>Full Name / पूरा नाम</label>
+        <input type="text" id="Name" placeholder="Enter your name" required>
       </div>
       <div class="form-group">
-        <label>Phone Number</label>
-        <input type="tel" id="Phone" required>
+        <label>Phone Number / फ़ोन नंबर</label>
+        <input type="tel" id="Phone" placeholder="Enter mobile number" required>
       </div>
       <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" id="Email" required>
+        <label>Email Address / ईमेल आईडी</label>
+        <input type="email" id="Email" placeholder="Enter email address" required>
       </div>
       <div class="form-group">
-        <label>UPI ID (For Cashback)</label>
-        <input type="text" id="UPI" placeholder="e.g. mobile@upi" required>
+        <label>UPI ID (For Cashback) / यूपीआई आईडी</label>
+        <input type="text" id="UPI" placeholder="e.g. yourname@oksbi" required>
       </div>
       <div class="form-group">
-        <label>Order ID</label>
-        <input type="text" id="OrderID" required>
+        <label>Order ID / ऑर्डर आईडी</label>
+        <input type="text" id="OrderID" placeholder="Enter Meesho Order ID" required>
       </div>
-      <div class="form-group">
-        <label>Screenshot</label>
+      
+      <div class="file-upload-group">
+        <label>Upload Payment Screenshot / स्क्रीनशॉट अपलोड करें</label>
         <input type="file" id="Screenshot" accept="image/*" required>
       </div>
-      <button type="submit" id="submitBtn" class="submit-btn">Submit</button>
+      
+      <button type="submit" id="submitBtn" class="submit-btn">Submit / सबमिट करें</button>
       <div id="statusMessage"></div>
     </form>
   </div>
@@ -173,8 +117,10 @@
       }
 
       submitBtn.disabled = true;
-      submitBtn.innerText = "Uploading...";
-      statusMessage.style.color = "#333";
+      submitBtn.innerText = "Uploading... / अपलोड हो रहा है...";
+      statusMessage.style.display = "block";
+      statusMessage.style.backgroundColor = "#fff9c4";
+      statusMessage.style.color = "#f57f17";
       statusMessage.innerText = "Please wait, submitting your details...";
 
       const reader = new FileReader();
@@ -199,21 +145,23 @@
         .then(response => response.json())
         .then(data => {
           if (data.result === 'success') {
-            statusMessage.style.color = "green";
-            statusMessage.innerText = "Details submitted successfully! Cashback will be processed soon.";
+            statusMessage.style.backgroundColor = "#c8e6c9";
+            statusMessage.style.color = "#2e7d32";
+            statusMessage.innerText = "Success! Details submitted. You will receive cashback in 7 days.\nसफलतापूर्वक सबमिट हो गया! 7 दिनों में कैशबैक मिल जाएगा।";
             form.reset();
           } else {
             throw new Error(data.message || "Submission failed");
           }
         })
         .catch(error => {
-          statusMessage.style.color = "red";
-          statusMessage.innerText = "Error submitting form. Please try again.";
+          statusMessage.style.backgroundColor = "#ffcdd2";
+          statusMessage.style.color = "#c62828";
+          statusMessage.innerText = "Error submitting form. Please try again.\nसबमिट करने में त्रुटि। कृपया पुनः प्रयास करें।";
           console.error('Error:', error);
         })
         .finally(() => {
           submitBtn.disabled = false;
-          submitBtn.innerText = "Submit";
+          submitBtn.innerText = "Submit / सबमिट करें";
         });
       };
       
