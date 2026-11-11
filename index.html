@@ -98,6 +98,15 @@
       border-radius: 6px; 
       cursor: pointer; 
     }
+    .submit-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    #statusMessage {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -113,33 +122,76 @@
       <a href="https://www.meesho.com/PiyushKumawat?ms=2" target="_blank">Open Meesho Profile</a>
     </div>
     
-    <form action="https://formspree.io/f/xnpdapaa" method="POST" enctype="multipart/form-data">
+    <form id="cashbackForm">
       <div class="form-group">
         <label>Full Name</label>
-        <input type="text" name="Name" required>
+        <input type="text" id="Name" required>
       </div>
       <div class="form-group">
         <label>Phone Number</label>
-        <input type="tel" name="Phone" required>
+        <input type="tel" id="Phone" required>
       </div>
       <div class="form-group">
         <label>Email Address</label>
-        <input type="email" name="Email" required>
+        <input type="email" id="Email" required>
       </div>
       <div class="form-group">
         <label>UPI ID (For Cashback)</label>
-        <input type="text" name="UPI" placeholder="e.g. mobile@upi" required>
+        <input type="text" id="UPI" placeholder="e.g. mobile@upi" required>
       </div>
       <div class="form-group">
         <label>Order ID</label>
-        <input type="text" name="OrderID" required>
+        <input type="text" id="OrderID" required>
       </div>
       <div class="form-group">
         <label>Screenshot</label>
-        <input type="file" name="file" accept="image/*" required>
+        <input type="file" id="Screenshot" accept="image/*" required>
       </div>
-      <button type="submit" class="submit-btn">Submit</button>
+      <button type="submit" id="submitBtn" class="submit-btn">Submit</button>
+      <div id="statusMessage"></div>
     </form>
   </div>
-</body>
-</html>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6eTYDPIBfn8CNz_nEwziq4xJcBF073gfvstk3vHtBXGxvZr3O79waROjSyov7NoI3/exec'; 
+    
+    const form = document.getElementById('cashbackForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusMessage = document.getElementById('statusMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const fileInput = document.getElementById('Screenshot');
+      const file = fileInput.files[0];
+      
+      if (!file) {
+        alert("Please select a screenshot.");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Uploading...";
+      statusMessage.style.color = "#333";
+      statusMessage.innerText = "Please wait, submitting your details...";
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const base64Data = event.target.result.split(',')[1];
+        
+        const payload = {
+          Name: document.getElementById('Name').value,
+          Phone: document.getElementById('Phone').value,
+          Email: document.getElementById('Email').value,
+          UPI: document.getElementById('UPI').value,
+          OrderID: document.getElementById('OrderID').value,
+          fileName: file.name,
+          fileType: file.type,
+          fileData: base64Data
+        };
+
+        fetch(scriptURL, {
+          method: 'POST',
+          body: JSON.stringify(payload)
+        })
+        .
