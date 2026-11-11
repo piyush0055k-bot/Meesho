@@ -35,20 +35,22 @@
       text-align: center; 
     }
     .logo-container img { 
-      max-width: 140px; 
-      margin-bottom: 16px; 
+      max-width: 220px; 
+      width: 100%;
+      margin-bottom: 18px; 
     }
     h1 { 
       color: var(--primary-color); 
-      font-size: 24px; 
-      margin-bottom: 6px; 
+      font-size: 32px; 
+      font-weight: 800;
+      margin-bottom: 8px; 
     }
     h2 { 
-      font-size: 18px; 
+      font-size: 20px; 
       margin-bottom: 12px; 
     }
     p { 
-      font-size: 13px; 
+      font-size: 14px; 
       color: #666; 
       margin-bottom: 24px; 
     }
@@ -194,4 +196,29 @@
           method: 'POST',
           body: JSON.stringify(payload)
         })
-        .
+        .then(response => response.json())
+        .then(data => {
+          if (data.result === 'success') {
+            statusMessage.style.color = "green";
+            statusMessage.innerText = "Details submitted successfully! Cashback will be processed soon.";
+            form.reset();
+          } else {
+            throw new Error(data.message || "Submission failed");
+          }
+        })
+        .catch(error => {
+          statusMessage.style.color = "red";
+          statusMessage.innerText = "Error submitting form. Please try again.";
+          console.error('Error:', error);
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Submit";
+        });
+      };
+      
+      reader.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
