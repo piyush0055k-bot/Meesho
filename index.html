@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,52 +14,81 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body { background-color: var(--bg-color); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 15px; }
-    .form-container { background-color: var(--card-bg); border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); max-width: 500px; width: 100%; padding: 40px; text-align: center; border-top: 8px solid var(--primary-color); }
+    .form-container { background-color: var(--card-bg); border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); max-width: 500px; width: 100%; padding: 35px; text-align: center; border-top: 8px solid var(--primary-color); }
     
-    .logo-container { margin-bottom: 20px; }
-    .logo-container img { max-width: 180px; height: auto; display: inline-block; }
-    .brand-title { font-size: 28px; font-weight: 800; color: var(--primary-color); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    /* Top Meesho Headline */
+    .meesho-header {
+      background: linear-gradient(135deg, #9c27b0, #d81b60);
+      color: #ffffff;
+      padding: 18px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(216, 27, 96, 0.25);
+    }
+    .meesho-header h1 {
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .meesho-header span {
+      font-size: 13px;
+      letter-spacing: 1px;
+      opacity: 0.9;
+      display: block;
+      margin-top: 4px;
+    }
     
-    h1 { color: var(--text-main); font-size: 32px; margin-bottom: 8px; font-weight: 700; }
-    .offer-badge { display: inline-block; background-color: #ffebee; color: var(--secondary-color); font-size: 20px; font-weight: bold; padding: 8px 24px; border-radius: 50px; margin-bottom: 20px; border: 2px dashed var(--secondary-color); }
+    h2 { color: var(--text-main); font-size: 26px; margin-bottom: 10px; font-weight: 700; }
+    .offer-badge { display: inline-block; background-color: #ffebee; color: var(--secondary-color); font-size: 19px; font-weight: bold; padding: 8px 24px; border-radius: 50px; margin-bottom: 20px; border: 2px dashed var(--secondary-color); }
     
-    .instructions { background-color: #f8e1e7; padding: 20px; border-radius: 12px; margin-bottom: 24px; text-align: left; font-size: 15px; line-height: 1.6; color: #222; border: 1px solid #f06292; }
-    .instructions p { margin-bottom: 12px; font-weight: 500; }
-    .instructions p:last-child { margin-bottom: 0; }
-    .hindi-text { font-weight: 600 !important; color: #880e4f; font-size: 16px; border-top: 1px solid #fbb8cb; padding-top: 12px; }
+    /* Claim & Rating Instructions Box */
+    .instructions { background-color: #fff3f8; padding: 18px; border-radius: 12px; margin-bottom: 22px; text-align: left; font-size: 14.5px; line-height: 1.6; color: #222; border: 1.5px solid #f06292; }
+    .instructions ul { padding-left: 18px; margin-bottom: 12px; }
+    .instructions li { margin-bottom: 6px; font-weight: 600; color: #880e4f; }
+    .english-note { border-top: 1px solid #fbb8cb; padding-top: 10px; font-size: 13.5px; color: #444; }
 
-    .store-link { margin-bottom: 25px; }
+    .store-link { margin-bottom: 24px; }
     .store-link a { display: block; background-color: #f3e5f5; color: #7b1fa2; padding: 14px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; transition: background 0.3s; border: 1px solid #e1bee7; }
     .store-link a:hover { background-color: #e1bee7; }
 
-    .form-group { text-align: left; margin-bottom: 20px; }
-    label { display: block; font-size: 14px; font-weight: 600; color: #444; margin-bottom: 8px; }
-    input[type="text"], input[type="tel"], input[type="email"] { width: 100%; padding: 14px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s; }
+    .form-group { text-align: left; margin-bottom: 18px; }
+    label { display: block; font-size: 14px; font-weight: 600; color: #444; margin-bottom: 6px; }
+    input[type="text"], input[type="tel"], input[type="email"] { width: 100%; padding: 13px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s; }
     input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus { border-color: var(--primary-color); }
     
-    .file-upload-group { background: #fafafa; padding: 15px; border: 2px dashed #ccc; border-radius: 8px; margin-bottom: 25px; text-align: left; }
-    input[type="file"] { width: 100%; padding: 10px 0; font-size: 14px; cursor: pointer; }
+    .file-upload-group { background: #fafafa; padding: 15px; border: 2px dashed #ccc; border-radius: 8px; margin-bottom: 22px; text-align: left; }
+    input[type="file"] { width: 100%; padding: 8px 0; font-size: 14px; cursor: pointer; }
     
     .submit-btn { width: 100%; background-color: var(--primary-color); color: #fff; border: none; padding: 16px; font-size: 18px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: transform 0.2s, background-color 0.3s; box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3); }
     .submit-btn:hover { background-color: #7b1fa2; transform: translateY(-2px); }
     .submit-btn:disabled { background-color: #ccc; cursor: not-allowed; box-shadow: none; }
     
-    #statusMessage { margin-top: 20px; font-weight: bold; font-size: 16px; padding: 15px; border-radius: 8px; display: none; }
+    #statusMessage { margin-top: 18px; font-weight: bold; font-size: 15px; padding: 14px; border-radius: 8px; display: none; }
   </style>
 </head>
 <body>
   <div class="form-container">
-    <div class="logo-container">
-      <img src="https://images.meesho.com/images/marketing/1661417516766.png" alt="Meesho">
-      <div class="brand-title">Meesho</div>
+    <!-- Top Meesho Headline -->
+    <div class="meesho-header">
+      <h1>MEESHO</h1>
+      <span>Official Cashback & Verification Portal</span>
     </div>
     
-    <h1>Verification</h1>
+    <h2>Verification</h2>
     <div class="offer-badge">₹50/- Cashback Offer</div>
     
+    <!-- Updated Instructions -->
     <div class="instructions">
-      <p><strong>English:</strong> Please submit your details along with the payment screenshot. You will receive ₹50 cashback in your account within 7 working days.</p>
-      <p class="hindi-text"><strong>हिंदी:</strong> कृपया अपना विवरण और पेमेंट का स्क्रीनशॉट सबमिट करें। 7 कार्य दिवसों के भीतर आपके खाते में ₹50 का कैशबैक आ जाएगा。</p>
+      <ul>
+        <li>कृपया ऑर्डर पर <strong>5-Star (⭐⭐⭐⭐⭐) रेटिंग</strong> देकर उसका स्क्रीनशॉट यहाँ अपलोड करें।</li>
+        <li>प्रोडक्ट <strong>रिटर्न (Return) नहीं करने पर</strong> 7 दिनों के अंदर आपका क्लेम (₹50 कैशबैक) आपके खाते में मिल जाएगा।</li>
+        <li>यदि आप प्रोडक्ट रिटर्न करते हैं, तो आपको कोई क्लेम नहीं मिलेगा।</li>
+      </ul>
+      <div class="english-note">
+        <strong>Note:</strong> Please give a 5-Star rating and upload the screenshot. Your ₹50 claim will be credited within 7 days if the product is not returned. No claim will be given on returned orders.
+      </div>
     </div>
     
     <div class="store-link">
@@ -89,7 +118,7 @@
       </div>
       
       <div class="file-upload-group">
-        <label>Upload Payment Screenshot / स्क्रीनशॉट अपलोड करें</label>
+        <label>Upload 5-Star Rating Screenshot / 5-स्टार स्क्रीनशॉट अपलोड करें</label>
         <input type="file" id="Screenshot" accept="image/*" required>
       </div>
       
@@ -147,7 +176,7 @@
           if (data.result === 'success') {
             statusMessage.style.backgroundColor = "#c8e6c9";
             statusMessage.style.color = "#2e7d32";
-            statusMessage.innerText = "Success! Details submitted. You will receive cashback in 7 days.\nसफलतापूर्वक सबमिट हो गया! 7 दिनों में कैशबैक मिल जाएगा।";
+            statusMessage.innerText = "सफलतापूर्वक सबमिट हो गया! प्रोडक्ट रिटर्न न करने पर 7 दिनों में आपका क्लेम मिल जाएगा।";
             form.reset();
           } else {
             throw new Error(data.message || "Submission failed");
@@ -156,7 +185,7 @@
         .catch(error => {
           statusMessage.style.backgroundColor = "#ffcdd2";
           statusMessage.style.color = "#c62828";
-          statusMessage.innerText = "Error submitting form. Please try again.\nसबमिट करने में त्रुटि। कृपया पुनः प्रयास करें।";
+          statusMessage.innerText = "सबमिट करने में त्रुटि। कृपया पुनः प्रयास करें।";
           console.error('Error:', error);
         })
         .finally(() => {
